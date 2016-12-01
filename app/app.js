@@ -16,6 +16,26 @@ $routeProvider
 
 }]);
 
+
+
+}]);
+myNinjaApp.directive('randomNinja',function(){
+
+  return{
+    restrict:'E',
+    scope:{
+      ninjas:'=',
+      title:'='
+    },
+    template:'{{title}}'
+    controller:function($scope){
+      $scope.random = Math.floor(Math.random()*4);
+
+    }
+  };
+});
+
+
 myNinjaApp.controller('NinjaController', ['$scope','$http', function($scope,$http){
 
 $scope.removeNinja = function(ninja){
