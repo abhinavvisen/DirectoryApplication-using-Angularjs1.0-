@@ -27,7 +27,7 @@ myNinjaApp.directive('randomNinja',function(){
       ninjas:'=',
       title:'='
     },
-    template:'{{title}}'
+    template:'views/random.html',
     controller:function($scope){
       $scope.random = Math.floor(Math.random()*4);
 
