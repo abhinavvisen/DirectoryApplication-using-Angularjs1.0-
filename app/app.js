@@ -55,6 +55,11 @@ $scope.addNinja = function(){
   $scope.newninja.belt= "";
   $scope.newninja.rate= "";
 };
+  
+  $scope.removeAll= function(){
+  $scope.ninjas=[];
+}
+  
 $http.get('data/ninjas.json').success(function(data){
   $scope.ninjas = data;
 });
