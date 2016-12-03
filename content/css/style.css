@@ -118,3 +118,15 @@ main{
   cursor: pointer;
   margin-left: 10px;
 }
+
+/*ANIMATIONS*/
+/* The starting CSS styles for the enter animation */
+main.ng-enter {
+  transition:0.5s linear all;
+  opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+main.ng-enter.ng-enter-active {
+  opacity:1;
+}
