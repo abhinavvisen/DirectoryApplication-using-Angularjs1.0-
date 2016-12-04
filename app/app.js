@@ -6,6 +6,9 @@ $routeProvider
   .when('/home',{
     templateUrl:'views/home.html'
   })
+  .when('/contact',{
+    templateUrl:'views/contact.html'
+  })
   .when('/directory',{
     templateUrl:'views/directory.html',
     controller:'NinjaController'
