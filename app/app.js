@@ -4,10 +4,16 @@ myNinjaApp.config(['$routeProvider', function($routeProvider){
 
 $routeProvider
   .when('/home',{
-    templateUrl:'views/home.html'
+    templateUrl:'views/home.html',
+    controller:'NinjaController'
   })
   .when('/contact',{
-    templateUrl:'views/contact.html'
+    templateUrl:'views/contact.html',
+    controller:'ContactConntroller'
+  })
+  .when('/contact-success'{
+    templateUrl:'views/contact-success.html',
+    controller:'ContactConntroller'
   })
   .when('/directory',{
     templateUrl:'views/directory.html',
@@ -15,10 +21,6 @@ $routeProvider
   }).otherwise({
     redirectTo:'/home'
   });
-
-
-}]);
-
 
 
 }]);
@@ -30,7 +32,7 @@ myNinjaApp.directive('randomNinja',function(){
       ninjas:'=',
       title:'='
     },
-    template:'views/random.html',
+    templateUrl:'views/random.html',
     transclude:true,
     replace:true,
     controller:function($scope){
@@ -39,7 +41,6 @@ myNinjaApp.directive('randomNinja',function(){
     }
   };
 });
-
 
 myNinjaApp.controller('NinjaController', ['$scope','$http', function($scope,$http){
 
@@ -58,12 +59,18 @@ $scope.addNinja = function(){
   $scope.newninja.belt= "";
   $scope.newninja.rate= "";
 };
-  
-  $scope.removeAll= function(){
+
+$scope.removeAll= function(){
   $scope.ninjas=[];
 }
-  
 $http.get('data/ninjas.json').success(function(data){
   $scope.ninjas = data;
 });
+}]);
+
+myNinjaApp.controller('ContactConntroller',['$scope','$location',function($scope,$location){
+
+  $scope.sendMessage=function(){
+    $location.path('contact-success');
+  };
 }]);
