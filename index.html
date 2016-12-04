@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myNinjaApp">
   <head>
+    <base href="/" target="_blank" />
     <title>TheNetNinja Angular Playlist</title>
     <link href="content/css/styles.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.30/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.9/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.9/angular-animate.min.js"></script>
     <script type="text/javascript" src="app/lib/angular.min.js"></script>
     <script type="text/javascript" src= "app/lib/angular-route.min.js"></script>
     <script type="text/javascript" src="app/app.js"></script>
@@ -18,7 +22,7 @@
           </ul>
         </div>
       </header>
-      <main ng-view></main>
+      <main ng-view=""></main>
 
     </body>
 </html>
