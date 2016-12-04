@@ -145,3 +145,8 @@ main.ng-enter.ng-enter-active {
   transition-duration: 0;
 }
 
+input.ng-invalid.ng-touched, textarea.ng-invalid.ngtouched{
+  border: 2px solid red;
+}
+
+
